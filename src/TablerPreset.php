@@ -2,6 +2,7 @@
 
 namespace cesaramirez\Presets\Tabler;
 
+use Illuminate\Container\Container;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Console\Presets\Preset;
 use Illuminate\Support\Arr;
