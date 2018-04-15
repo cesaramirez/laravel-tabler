@@ -2,11 +2,22 @@
 
 namespace cesaramirez\Presets\Tabler;
 
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Console\Presets\Preset;
 use Illuminate\Support\Arr;
 
 class TablerPreset extends Preset
 {
+    /**
+     * Install the preset.
+     */
+    public static function install()
+    {
+        static::updatePackages();
+        static::updateSass();
+        static::updateBootstrapping();
+    }
+
     /**
      * Install the preset and auth views.
      */
@@ -26,8 +37,8 @@ class TablerPreset extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return [
-            'bootstrap' => '^4.0.0',
-            'popper.js' => '^1.12.9',
+            'bootstrap' => '^4.1.0',
+            'popper.js' => '^1.14.3',
         ] + Arr::except($packages, ['bootstrap-sass']);
     }
 
@@ -38,7 +49,8 @@ class TablerPreset extends Preset
     {
         copy(__DIR__.'/tabler-stubs/sass/app.scss', resource_path('assets/sass/app.scss'));
         copy(__DIR__.'/tabler-stubs/sass/_variables.scss', resource_path('assets/sass/_variables.scss'));
-        copy(__DIR__.'/tabler-stubs/sass/tabler', resource_path('assets/sass/'));
+        (new Filesystem())->copyDirectory(__DIR__.'/tabler-stubs/sass/tabler', resource_path('assets/sass/tabler'));
+        (new Filesystem())->copyDirectory(__DIR__.'/tabler-stubs/fonts', resource_path('assets/fonts'));
     }
 
     /**
@@ -52,8 +64,6 @@ class TablerPreset extends Preset
 
     /**
      * Export the authentication views.
-     *
-     * @return void
      */
     protected static function scaffoldAuth()
     {
