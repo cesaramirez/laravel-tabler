@@ -1,5 +1,5 @@
 {
-  "name": "cesaramirez/tabler",
+  "name": "cesaramirez/laravel-tabler",
   "description": "Laravel 5.5/5.6 Front-end preset for Tabler Bootstrap.",
   "keywords": ["laravel", "preset", "tabler", "bootstrap"],
   "license": "MIT",
