@@ -6,7 +6,10 @@
         <div class="row">
             <div class="col col-login mx-auto">
                 <div class="text-center mb-6">
-                    <img src="/tabler.svg" class="h-6" alt="">
+                    <img
+                        src="/https://tabler.github.io/tabler/demo/brand/tabler.svg"
+                        class="h-6"
+                        alt="Logo Tabler">
                 </div>
                 <form class="card" action="{{ route('login') }}" method="post" novalidate>
                     @csrf
