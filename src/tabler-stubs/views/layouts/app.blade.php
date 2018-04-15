@@ -23,7 +23,10 @@
                 <div class="container">
                     <div class="d-flex">
                         <a class="header-brand" href="{{ route('home')}}">
-                            <img src="/tabler.svg" class="header-brand-img" alt="tabler logo">
+                            <img
+                                src="https://tabler.github.io/tabler/demo/brand/tabler.svg"
+                                class="header-brand-img"
+                                alt="tabler logo">
                         </a>
 
                         <div class="d-flex order-lg-2 ml-auto">
