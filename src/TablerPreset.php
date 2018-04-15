@@ -15,7 +15,7 @@ class TablerPreset extends Preset
     public static function install()
     {
         static::updatePackages();
-        static::updateSass();
+        static::updateAssets();
         static::updateBootstrapping();
     }
 
@@ -46,7 +46,7 @@ class TablerPreset extends Preset
     /**
      * Update the Sass files for the application.
      */
-    protected static function updateSass()
+    protected static function updateAssets()
     {
         copy(__DIR__.'/tabler-stubs/sass/app.scss', resource_path('assets/sass/app.scss'));
         copy(__DIR__.'/tabler-stubs/sass/_variables.scss', resource_path('assets/sass/_variables.scss'));
