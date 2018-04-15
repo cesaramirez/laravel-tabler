@@ -7,7 +7,7 @@
             <div class="col col-login mx-auto">
                 <div class="text-center mb-6">
                     <img
-                        src="/https://tabler.github.io/tabler/demo/brand/tabler.svg"
+                        src="https://tabler.github.io/tabler/demo/brand/tabler.svg"
                         class="h-6"
                         alt="Logo Tabler">
                 </div>
