@@ -1,5 +1,7 @@
 # Laravel 5.5/5.6 Front-end Preset For Tabler Dashboard UI Kit
 
+[![Latest Stable Version](https://poser.pugx.org/cesaramirez/laravel-tabler/v/stable)](https://packagist.org/packages/cesaramirez/laravel-tabler)
+
 Preset for [Tabler](https://tabler.github.io/) scaffolding on new Laravel 5.5/5.6 project.
 
 ## Usage
