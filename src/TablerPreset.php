@@ -62,7 +62,13 @@ class TablerPreset extends Preset
         copy(__DIR__.'/tabler-stubs/webpack.mix.js', base_path('webpack.mix.js'));
 
         if (self::isLaravel57orUp()) {
-            file_put_contents(base_path('webpack.mix.js'), str_replace("assets/", "", file_get_contents(base_path('webpack.mix.js'))));
+            file_put_contents(base_path('webpack.mix.js'),
+                str_replace(
+                    "assets/",
+                    "",
+                    file_get_contents(base_path('webpack.mix.js'))
+                )
+            );
         }
  
         copy(__DIR__.'/tabler-stubs/bootstrap.js', static::getResourcePath('js/bootstrap.js'));
@@ -97,7 +103,7 @@ class TablerPreset extends Preset
     }
 
     /**
-     * Gets resource path depending on version of Laravel
+     * Gets resource path depending on version of Laravel.
      *
      * @param string $path
      * @return string
