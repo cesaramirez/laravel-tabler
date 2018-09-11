@@ -109,7 +109,7 @@ class TablerPreset extends Preset
             return resource_path($path);
         }
 
-        return static::getResourcePath('assets/' . $path);
+        return resource_path('assets/' . $path);
     }
 
     /**
