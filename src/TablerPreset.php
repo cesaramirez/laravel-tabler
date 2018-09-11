@@ -48,10 +48,10 @@ class TablerPreset extends Preset
      */
     protected static function updateAssets()
     {
-        copy(__DIR__.'/tabler-stubs/sass/app.scss', resource_path('assets/sass/app.scss'));
-        copy(__DIR__.'/tabler-stubs/sass/_variables.scss', resource_path('assets/sass/_variables.scss'));
-        (new Filesystem())->copyDirectory(__DIR__.'/tabler-stubs/sass/tabler', resource_path('assets/sass/tabler'));
-        (new Filesystem())->copyDirectory(__DIR__.'/tabler-stubs/fonts', resource_path('assets/fonts'));
+        copy(__DIR__.'/tabler-stubs/sass/app.scss', static::getResourcePath('sass/app.scss'));
+        copy(__DIR__.'/tabler-stubs/sass/_variables.scss', static::getResourcePath('sass/_variables.scss'));
+        (new Filesystem())->copyDirectory(__DIR__.'/tabler-stubs/sass/tabler', static::getResourcePath('sass/tabler'));
+        (new Filesystem())->copyDirectory(__DIR__.'/tabler-stubs/fonts', static::getResourcePath('fonts'));
     }
 
     /**
@@ -60,7 +60,12 @@ class TablerPreset extends Preset
     protected static function updateBootstrapping()
     {
         copy(__DIR__.'/tabler-stubs/webpack.mix.js', base_path('webpack.mix.js'));
-        copy(__DIR__.'/tabler-stubs/bootstrap.js', resource_path('assets/js/bootstrap.js'));
+
+        if (self::isLaravel57orUp()) {
+            file_put_contents(base_path('webpack.mix.js'), str_replace("assets/", "", file_get_contents(base_path('webpack.mix.js'))));
+        }
+ 
+        copy(__DIR__.'/tabler-stubs/bootstrap.js', static::getResourcePath('js/bootstrap.js'));
     }
 
     /**
@@ -89,5 +94,31 @@ class TablerPreset extends Preset
             Container::getInstance()->getNamespace(),
             file_get_contents(__DIR__.'/tabler-stubs/controllers/HomeController.stub')
         );
+    }
+
+    /**
+     * Gets resource path depending on version of Laravel
+     *
+     * @param string $path
+     * @return string
+     */
+    protected static function getResourcePath($path = '')
+    {
+
+        if (self::isLaravel57orUp()) {
+            return resource_path($path);
+        }
+
+        return static::getResourcePath('assets/' . $path);
+    }
+
+    /**
+     * Is running in Laravel 5.7 or up?
+     * 
+     * @return bool
+     */
+    protected static function isLaravel57orUp()
+    {
+        return (int)str_replace('.', '', app()->version()) >= 570;
     }
 }
