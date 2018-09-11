@@ -64,8 +64,8 @@ class TablerPreset extends Preset
         if (self::isLaravel57orUp()) {
             file_put_contents(base_path('webpack.mix.js'),
                 str_replace(
-                    "assets/",
-                    "",
+                    'assets/',
+                    '',
                     file_get_contents(base_path('webpack.mix.js'))
                 )
             );
@@ -106,6 +106,7 @@ class TablerPreset extends Preset
      * Gets resource path depending on version of Laravel.
      *
      * @param string $path
+     *
      * @return string
      */
     protected static function getResourcePath($path = '')
@@ -115,7 +116,7 @@ class TablerPreset extends Preset
             return resource_path($path);
         }
 
-        return resource_path('assets/' . $path);
+        return resource_path('assets/'. $path);
     }
 
     /**
@@ -125,6 +126,6 @@ class TablerPreset extends Preset
      */
     protected static function isLaravel57orUp()
     {
-        return (int)str_replace('.', '', app()->version()) >= 570;
+        return (int) str_replace('.', '', app()->version()) >= 570;
     }
 }
