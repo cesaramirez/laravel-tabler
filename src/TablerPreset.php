@@ -70,7 +70,7 @@ class TablerPreset extends Preset
                 )
             );
         }
- 
+
         copy(__DIR__.'/tabler-stubs/bootstrap.js', static::getResourcePath('js/bootstrap.js'));
     }
 
@@ -111,17 +111,16 @@ class TablerPreset extends Preset
      */
     protected static function getResourcePath($path = '')
     {
-
         if (self::isLaravel57orUp()) {
             return resource_path($path);
         }
 
-        return resource_path('assets/'. $path);
+        return resource_path('assets/'.$path);
     }
 
     /**
      * Is running in Laravel 5.7 or up?
-     * 
+     *
      * @return bool
      */
     protected static function isLaravel57orUp()
