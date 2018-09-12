@@ -61,7 +61,7 @@ class TablerPreset extends Preset
     {
         copy(__DIR__.'/tabler-stubs/webpack.mix.js', base_path('webpack.mix.js'));
 
-        if (self::isLaravel57orUp()) {
+        if (!self::expectsAssetsFolder()) {
             file_put_contents(base_path('webpack.mix.js'),
                 str_replace(
                     'assets/',
@@ -111,20 +111,20 @@ class TablerPreset extends Preset
      */
     protected static function getResourcePath($path = '')
     {
-        if (self::isLaravel57orUp()) {
-            return resource_path($path);
+        if (self::expectsAssetsFolder()) {
+            return resource_path('assets/'.$path);
         }
 
-        return resource_path('assets/'.$path);
+        return resource_path($path);
     }
 
     /**
-     * Is running in Laravel 5.7 or up?
+     * Should we expect to see an assets folder within this version of Laravel?
      *
      * @return bool
      */
-    protected static function isLaravel57orUp()
+    protected static function expectsAssetsFolder()
     {
-        return (int) str_replace('.', '', app()->version()) >= 570;
+        return (int) str_replace('.', '', app()->version()) < 570;
     }
 }
