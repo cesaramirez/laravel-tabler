@@ -37,7 +37,7 @@
                             <label class="form-label">@lang('Email address')</label>
                             <input
                                 type="email"
-                                class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                 placeholder="Enter email"
                                 name="email"
                                 value="{{ old('email') }}"
