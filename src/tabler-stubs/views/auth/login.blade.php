@@ -38,7 +38,7 @@
                             <label class="form-label">
                                 @lang('Password')
                                 <a href="{{ route('password.request') }}" class="float-right small">
-                                    @lang('I forgot password')
+                                    @lang('I forgot my password')
                                 </a>
                             </label>
                             <input
@@ -71,7 +71,7 @@
                 </form>
 
                 <div class="text-center text-muted">
-                    Don't have account yet? <a href="{{ route('register') }}">Sign up</a>
+                    Don't have an account yet? <a href="{{ route('register') }}">Sign up</a>
                 </div>
             </div>
         </div>
