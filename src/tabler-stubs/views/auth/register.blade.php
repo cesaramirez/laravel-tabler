@@ -81,7 +81,7 @@
                 </form>
 
                 <div class="text-center text-muted">
-                    Already have account? <a href="{{ route('login') }}">Sign in</a>
+                    Already have an account? <a href="{{ route('login') }}">Sign in</a>
                 </div>
             </div>
         </div>
