@@ -104,7 +104,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Interface</a>
+                                    <a class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Interface</a>
                                     <div class="dropdown-menu dropdown-menu-arrow">
                                     <a href="#" class="dropdown-item ">Cards design</a>
                                     <a href="#" class="dropdown-item ">Charts</a>
@@ -112,7 +112,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-calendar"></i> Components</a>
+                                    <a class="nav-link" data-toggle="dropdown"><i class="fe fe-calendar"></i> Components</a>
                                     <div class="dropdown-menu dropdown-menu-arrow">
                                     <a href="#" class="dropdown-item ">Maps</a>
                                     <a href="#" class="dropdown-item ">Icons</a>
@@ -121,7 +121,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-file"></i> Pages</a>
+                                    <a class="nav-link" data-toggle="dropdown"><i class="fe fe-file"></i> Pages</a>
                                     <div class="dropdown-menu dropdown-menu-arrow">
                                     <a href="#" class="dropdown-item active">Profile</a>
                                     <a href="#" class="dropdown-item ">Login</a>
