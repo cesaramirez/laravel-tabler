@@ -38,7 +38,7 @@ class TablerPreset extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return [
-            'bootstrap' => '4.3.1',
+            'bootstrap' => '^4.1.0',
             'jquery' => '^3.4.1',
             'popper.js' => '^1.14.3',
         ] + Arr::except($packages, ['bootstrap-sass']);
